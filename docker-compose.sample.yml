@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  SERVICE_NAME:
+    build: ./jupyter-notebooks
+    image: IMAGE_NAME
+    ports:
+      - "LOCAL_PORT:8888"
+    volumes:
+      - .:/usr/src/notebooks
