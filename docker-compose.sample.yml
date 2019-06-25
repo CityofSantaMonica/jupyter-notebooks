@@ -1,9 +1,14 @@
 version: "3.7"
 
 services:
-  SERVICE_NAME:
+  base:
     build: ./jupyter-notebooks
-    image: IMAGE_NAME
+    image: csm_jupyter
+
+  SERVICE_NAME:
+    image: csm_jupyter
+    entrypoint: ["jupyter", "notebook"]
+    command: [".", "--allow-root", "--ip=0.0.0.0", "--port=8888", "--no-browser"]
     ports:
       - "LOCAL_PORT:8888"
     volumes:
