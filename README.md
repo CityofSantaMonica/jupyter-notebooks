@@ -7,7 +7,7 @@ python scientific computing and data science packages (`pandas`/`geopandas`, `ma
 
 It can also be used directly as an ad-hoc Jupyter Notebook server.
 
-## Ad-hoc Jupyer Notebook server
+## Ad-hoc Jupyter Notebook server
 
 This repository provides an environment for working with Jupyter Notebooks that is quick and easy to setup.
 
@@ -74,19 +74,18 @@ cp ./jupyter-notebooks/docker-compose.sample.yml docker-compose.yml
 And edit as neccessary:
 
 * `SERVICE_NAME` should be replaced by the name of your project e.g. `analysis`
-* `IMAGE_NAME` should be replaced by the name of your project e.g. `analysis`
 * `LOCAL_PORT` should be replaced by the port that you want to utilize from localhost.
 
-Build the image using Docker Compose:
+Build the base image using Docker Compose:
 
 ```bash
-docker-compose build
+docker-compose build base
 ```
 
-Now use Docker Compose to start the whole thing up:
+And use Docker Compose to start the whole thing up:
 
 ```bash
-docker-compose up
+docker-compose up <SERVICE_NAME>
 ```
 
 Browse to http://localhost:LOCAL_PORT/?token= using the token displayed in the container startup information.
